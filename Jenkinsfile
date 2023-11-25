@@ -23,6 +23,12 @@ npm test'''
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'docker build -t mariusz67image /home/mariusz/cicd_practice/cicd-pipeline/'
+      }
+    }
+
   }
   environment {
     registry = 'mariusz67/cicd_pipeline'
