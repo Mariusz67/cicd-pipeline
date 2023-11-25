@@ -1,12 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Checkout') {
       steps {
         sh '''
 checkout scm
-#!/bin/bash
-npm install'''
+'''
       }
     }
 
