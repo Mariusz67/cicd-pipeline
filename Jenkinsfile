@@ -25,7 +25,7 @@ npm test'''
 
     stage('Deploy') {
       steps {
-        sh 'docker build -t mariusz67image'
+        sh 'docker build -t mariusz67image /home/mariusz/cicd_practice/cicd-pipeline/Dockerfile'
       }
     }
 
