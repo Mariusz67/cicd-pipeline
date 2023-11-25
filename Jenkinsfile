@@ -25,7 +25,14 @@ npm test'''
 
     stage('Deploy') {
       steps {
-        sh 'docker build -t /home/mariusz/cicd_practice/cicd-pipeline'
+        script {
+          node {
+            checkout scm
+            def customImage = docker.build("my-image:${env.BUILD_ID}")
+            customImage.push()
+          }
+        }
+
       }
     }
 
