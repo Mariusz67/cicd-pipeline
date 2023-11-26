@@ -48,5 +48,6 @@ npm test'''
   }
   environment {
     registry = 'mariusz67/cicd_pipeline'
+    registryCredential = 'dockerhub_id'
   }
 }
