@@ -26,19 +26,9 @@ npm test'''
     stage('Deploy') {
       steps {
         script {
-          node {
-            checkout scm
-            def customImage = docker.build("my-image:${env.BUILD_ID}")
 
-          }
-        }
+          def customImage = docker.build("mariusz67/cicd_pipeline:${env.BUILD_ID}")
 
-      }
-    }
-
-    stage('Push to Docker') {
-      steps {
-        script {
           docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_id') {customImage.push()}
         }
 
